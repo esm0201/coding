@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="http://www.naver.com" />
 
     <Button
         android:id="@+id/btnShowText"
@@ -26,6 +26,13 @@
         android:layout_height="wrap_content"
         android:text="홈페이지 열기" />
 
+    <Button
+        android:id="@+id/btnCurrentTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="현재시각"
+        android:visibility="visible" />
+
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
@@ -34,13 +41,14 @@
 
         <RadioButton
             android:id="@+id/radioOreo"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="false"
             android:text="오레오" />
 
         <RadioButton
             android:id="@+id/radioPie"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="파이" />
     </RadioGroup>
