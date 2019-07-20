@@ -1,7 +1,6 @@
 package com.ldm.project4_2;
 
 import android.content.Intent;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,10 +14,10 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class TEST extends AppCompatActivity {
 
     CheckBox chBoxStart;
-    Button btnSelect,btnReset;
+    Button btnSelect;
     RadioGroup radioGroup;
     RadioButton radioDog,radioCat,radioRabbit;
     ImageView imageView;
@@ -27,46 +26,36 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test);
 
-       // Intent intent = new Intent(this,splash.class);
-       // startActivity(intent);
-        switchStart = findViewById(R.id.switchStart);
+        Intent intent = new Intent(this,splash.class);
+        startActivity(intent);
         layout2 = findViewById(R.id.layout2);
         btnSelect = findViewById(R.id.btnSelect);
         radioDog = findViewById(R.id.radioDog);
         radioCat = findViewById(R.id.radioCat);
         radioRabbit = findViewById(R.id.radioRabbit);
         imageView = findViewById(R.id.imageView);
-        btnReset = findViewById(R.id.btnReset);
+
         layout2.setVisibility(View.INVISIBLE);
         chBoxStart = findViewById(R.id.chBoxStart);
-
         chBoxStart.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(chBoxStart.isChecked()) {
+                if(chBoxStart.isChecked())
                     layout2.setVisibility(View.VISIBLE);
-                    switchStart.setChecked(true);
-                }
-                else {
+                else
                     layout2.setVisibility(View.INVISIBLE);
-                    switchStart.setChecked(false);
-                }
             }
         });
 
         switchStart.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(switchStart.isChecked()) {
-                    layout2.setVisibility(View.VISIBLE);
-                    chBoxStart.setChecked(true);
-                }
-                else {
-                    layout2.setVisibility(View.INVISIBLE);
-                    chBoxStart.setChecked(false);
-                }
+                if(switchStart.isChecked())
+                    System.out.println("Switch ON");
+                else
+                    System.out.println("Switch OFF");
             }
         });
         btnSelect.setOnClickListener(new View.OnClickListener() {
@@ -78,15 +67,6 @@ public class MainActivity extends AppCompatActivity {
                     imageView.setImageResource(R.drawable.cat);
                 if(radioRabbit.isChecked())
                     imageView.setImageResource(R.drawable.rabbit);
-            }
-        });
-
-        btnReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = getIntent();
-                finish();
-                startActivity(intent);
             }
         });
 
