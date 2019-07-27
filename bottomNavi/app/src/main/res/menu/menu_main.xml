@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mk.bottnavi0725.MainActivity">
+
+    <item
+        android:id="@+id/about"
+        android:orderInCategory="100"
+        android:title="@string/menu_about"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/power_off"
+        android:icon="@drawable/ic_power_settings_new_black_24dp"
+        android:title="@string/menu_power_off"
+        app:showAsAction="always"/>
+
+</menu>

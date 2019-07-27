@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Navi메뉴</string>
+    <string name="title_home">홈</string>
+    <string name="title_dashboard">환경설정</string>
+    <string name="title_notifications">알림</string>
+    <string name="menu_about">프로그램 정보</string>
+    <string name="menu_power_off">프로그램 종료</string>
+</resources>
