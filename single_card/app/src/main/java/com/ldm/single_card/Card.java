@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.jar.Attributes;
 
 public class Card extends LinearLayout {
     String strTitle;
@@ -32,7 +31,7 @@ public class Card extends LinearLayout {
         Drawable drawable = attributes.getDrawable(R.styleable.card_src);
         attributes.recycle();
 
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.single_card,this,true);
 
         imgView = findViewById(R.id.card_image);
