@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomDataPre">
+        <attr name="attrImgsrc" format="reference" ></attr>
+        <attr name="attrName" format="string"></attr>
+        <attr name="attrTel" format="string"></attr>
+    </declare-styleable>
+</resources>

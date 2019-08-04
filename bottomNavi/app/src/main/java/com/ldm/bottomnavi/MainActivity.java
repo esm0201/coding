@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private View dialogView, toastView;
     private EditText editName, editEmail;
     private TextView toastText;
-
+    
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 

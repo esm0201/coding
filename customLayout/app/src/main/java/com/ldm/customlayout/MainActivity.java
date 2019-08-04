@@ -10,8 +10,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       presenter = findViewById(R.id.custMyView);
-        presenter = findViewById(R.id.custMyView);
-        presenter.setCustView(new CustomModel(R.drawable.ic_desktop_windows_black_24dp,"이동명","010-1234-5678"));
+      // presenter = findViewById(R.id.custMyView);
+       // presenter.setCustView(new CustomModel(R.drawable.ic_desktop_windows_black_24dp,"이동명","010-1234-5678"));
     }
 }

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">0804TabBasic</string>
+    <string name="tab_text_1">HOME</string>
+    <string name="tab_text_2">환경설정</string>
+    <string name="tab_text_3">날씨정보</string>
+    <string name="tab_text_4">공지사항</string>
+</resources>

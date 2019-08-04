@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">customLayout</string>
+    <string name="app_name">커스텀 레이아웃2</string>
     <string name="strNname">이름</string>
+    <string name="strTel">010-1234-5678</string>
 </resources>
