@@ -13,21 +13,15 @@
 
         <TextView
             android:id="@+id/tv1"
-            android:layout_width="93dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="그림1"
             android:textSize="20dp" />
 
         <RatingBar
             android:id="@+id/ratingBar1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="false"
-            android:focusableInTouchMode="false"
-            android:focusable="false"
-            android:isScrollContainer="false"/>
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
     </TableRow>
 
     <TableRow
