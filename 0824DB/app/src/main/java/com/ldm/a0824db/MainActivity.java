@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     myDBHelper myHelper;
     EditText edtName,edtNumber,edtNameResult,edtNumberResult;
     Button btnInit,btnInsert,btnUpdate,btnDelete,btnSelect;
-    SQLiteDatabasse sqlDB;
+    SQLiteDatabase sqlDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 sqlDB = myHelper.getWritableDatabase();
                 myHelper.onUpgrade(sqlDB,1,2);
+                btnSelect.callOnClick();
             }
         });
 
@@ -48,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sqlDB = myHelper.getWritableDatabase();
-                sqlDB.execSQL("INSERT INTO groupTBL VALUES ( '"+edtName.getText().toString()+"',"+edtNumber.getText().toString()+");");
+                if(!edtName.getText().toString().matches("")&&!edtNumber.getText().toString().matches(""))
+                    sqlDB.execSQL("INSERT INTO groupTBL VALUES ( '"+edtName.getText().toString()+"',"+edtNumber.getText().toString()+");");
                 sqlDB.close();
-                Toast.makeText(getApplicationContext(),"입력됨",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"입력됨"+edtNumber.getText().toString(),Toast.LENGTH_SHORT).show();
                 btnSelect.callOnClick();
             }
         });
@@ -59,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sqlDB = myHelper.getWritableDatabase();
-                if(edtName.getText().toString()!=""){
-                    sqlDB.execSQL("UPDATE groupTBL SET GNumber ="+edtNumber.getText()+"WHERE gName = '"+edtName.getText().toString()+"';");
+                if(!edtName.getText().toString().matches("")&&!edtNumber.getText().toString().matches("")){
+                    sqlDB.execSQL("UPDATE groupTBL SET GNumber ="+edtNumber.getText()+" WHERE gName = '"+edtName.getText().toString()+"';");
                 }
                 sqlDB.close();
 
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
                 while(cursor.moveToNext()){
                     strNames += cursor.getString(0)+"\r\n";
-                    strNumbers += cursor.getString(0)+"\r\n";
+                    strNumbers += cursor.getString(1)+"\r\n";
                 }
 
                 edtNameResult.setText(strNames);
